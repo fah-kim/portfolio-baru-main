@@ -9,7 +9,9 @@ class categoryController extends Controller
 {
     public function index ()
     {
-        return view('category.category');
+        $categories = category::paginate(5);
+
+        return view('category.category', compact('categories'));
     }
 
     public function create ()
@@ -24,12 +26,9 @@ class categoryController extends Controller
             'description' => 'required|max:255'
         ]);
 
-        category::create([
-            'name' => $request->name,
-            'description' => $request->description
-        ]);
+        category::create($request->all());
 
-        return redirect('/index')->with('success', 'kategori berhasil ditambahkan');
+        return redirect()->route('categories.index')->with('success', 'kategori berhasil ditambahkan');
     }
 
     public function show ()

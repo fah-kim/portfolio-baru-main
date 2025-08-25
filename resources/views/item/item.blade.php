@@ -5,10 +5,12 @@
 
 
 <div class="container">
-    <h2 class="text-center">Daftar data</h2>
+    <h2 class="text-center">Daftar Barang</h2>
 
-    <a href="{{ route('items.create') }}" class="btn btn-primary mb-3">+ Tambah Barang</a>
-    <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3 ">+ Tambah Kategori</a>
+    <a href="{{ route('items.create') }}" class="btn btn-primary">+ Tambah Barang</a>
+    <br>
+    <br>
+    <a href="{{ route('categories.index') }}" class="btn btn-primary mb-3">Daftar Kategori</a>
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
