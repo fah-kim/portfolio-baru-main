@@ -6,10 +6,11 @@
 
 <div class="container">
     <h2 class="text-center">Daftar Kategori</h2>
-
+    @auth
     <a href="{{ route('categories.create') }}" class="btn btn-primary">+ Tambah Kategori</a>
     <br>
     <br>
+    @endauth
     <a href="{{ route('items.index') }}" class="btn btn-primary mb-3">Daftar Barang</a>
 
     @if(session('success'))
@@ -23,7 +24,9 @@
                 <th>No</th>
                 <th>Nama</th>
                 <th>Deskripsi</th>
+                @auth
                 <th>Aksi</th>
+                @endauth
             </tr>
         </thead>
 
@@ -33,6 +36,7 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $category->name }}</td>
                 <td>{{ $category->description }}</td>
+                @auth
                 <td>
                     <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-warning">Edit</a>
                     <form action="{{ route('categories.destroy', $category->id) }}" style="display: inline" method="POST">
@@ -42,6 +46,8 @@
                     </form>
                 </td>
             </tr>
+            @endauth
+
             @empty
             <tr>
                 <td colspan="5">Tidak ada data</td>
