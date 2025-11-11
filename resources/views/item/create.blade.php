@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','Buat Barang')
 
 @section('content')
 
@@ -15,7 +16,6 @@
         </div>
     @endif
 
-        <h1 style="text-align: center">Tambah Data</h1>
         <form method="POST" action="{{ route('items.store') }}">
 
             @csrf

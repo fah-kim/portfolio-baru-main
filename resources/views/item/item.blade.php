@@ -1,11 +1,12 @@
 @extends('layouts.app')
+@section('title','Daftar Barang')
 
 @section('content')
 
 
 
-<div class="container">
-    <h2 class="text-center">Daftar Barang</h2>
+<div class="container mt-5">
+
 @guest
 <a href="{{ route('show.login') }}" class="btn btn-primary me-3">Login</a>
 <a href="{{ route('show.register') }}" class="btn btn-primary">Registrasi</a>
@@ -14,16 +15,15 @@
 @endguest
 
 @auth
-<span class="mt-5 mb-3 fs-3">Halo, {{ Auth::user()->name }}!</span>
-<form action="{{ route('logout') }}" method="POST" class="mb-3">
+<h3 class="mt-5 mb-3 fs-3">Halo, {{ Auth::user()->name }}!</h3>
+<br><br>
+{{-- <form action="{{ route('logout') }}" method="POST" class="mb-3">
     @csrf
     <button class="btn btn-warning me-3">Logout</button>
-</form>
-<a href="{{ route('items.create') }}" class="btn btn-primary mb-3">+ Tambah Barang</a>
-<br>
+</form> --}}
+
     @endauth
-    <a href="{{ route('categories.index') }}" class="btn btn-primary mb-3">Daftar Kategori</a>
-    <br>
+
 
 
     @if(session('success'))

@@ -1,8 +1,8 @@
 @extends('layouts.app')
+@section('title','Edit Barang')
 
 @section('content')
 <div class="container">
-    <h1 class="mt-3">Edit Barang</h1>
 
                 @if ($errors->any())
         <div class="alert alert-danger">

@@ -1,17 +1,12 @@
 @extends('layouts.app')
+@section('title','Daftar Kategori')
 
 @section('content')
 
 
 
-<div class="container">
-    <h2 class="text-center">Daftar Kategori</h2>
-    @auth
-    <a href="{{ route('categories.create') }}" class="btn btn-primary">+ Tambah Kategori</a>
-    <br>
-    <br>
-    @endauth
-    <a href="{{ route('items.index') }}" class="btn btn-primary mb-3">Daftar Barang</a>
+<div class="container mt-5">
+
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
